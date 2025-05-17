@@ -1,1 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JD 足球反波胆</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <!-- 顶部导航栏 -->
+  <header class="flex items-center justify-between p-4 bg-white shadow">
+    <div class="text-2xl font-bold">JD反波胆</div>
+    <nav>
+      <button class="lang-btn" data-lang="zh-CN">中</button>
+      <button class="lang-btn" data-lang="en">EN</button>
+      <button class="lang-btn" data-lang="ms">BM</button>
+    </nav>
+    <div>
+      <button class="px-4 py-2 bg-blue-600 text-white rounded">注册</button>
+      <button class="px-4 py-2 border border-blue-600 text-blue-600 rounded">登录</button>
+    </div>
+  </header>
 
+  <!-- Hero 横幅 -->
+  <section class="flex flex-col items-center justify-center h-96 bg-[url('hero.jpg')] bg-cover">
+    <h1 class="text-4xl font-extrabold text-white hero-title">只猜错误的比赛结果，反波胆玩法，一球逆转！</h1>
+    <p class="mt-4 text-lg text-white">挑战从这里开始</p>
+    <button class="mt-6 px-6 py-3 bg-red-500 text-white rounded">立即订阅</button>
+  </section>
+
+  <!-- 功能亮点 -->
+  <section class="py-12 text-center">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+      <div>
+        <h3 class="text-2xl font-semibold">高回报率</h3>
+        <p class="mt-2">High Returns</p>
+      </div>
+      <div>
+        <h3 class="text-2xl font-semibold">专家解析</h3>
+        <p class="mt-2">Expert Analysis</p>
+      </div>
+      <div>
+        <h3 class="text-2xl font-semibold">实时推送</h3>
+        <p class="mt-2">Real-time Alerts</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-6 bg-white text-center text-sm text-gray-500">
+    © 2025 JD反波胆. 保留所有权利.
+  </footer>
+
+  <script>
+    const translations = {
+      'zh-CN': {
+        heroTitle: '只猜错误的比赛结果，反波胆玩法，一球逆转！',
+        cta: '立即订阅'
+      },
+      'en': {
+        heroTitle: 'Only predict the wrong score, reverse the odds!',
+        cta: 'Subscribe Now'
+      },
+      'ms': {
+        heroTitle: 'Hanya ramal keputusan salah, terbalikkan peluang!',
+        cta: 'Langgan Sekarang'
+      }
+    };
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const lang = btn.dataset.lang;
+        document.querySelector('.hero-title').innerText = translations[lang].heroTitle;
+        document.querySelector('section button').innerText = translations[lang].cta;
+      });
+    });
+  </script>
+</body>
+</html>
